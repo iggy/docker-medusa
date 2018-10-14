@@ -1,5 +1,5 @@
 FROM alpine:edge
-MAINTAINER tim@haak.co
+MAINTAINER iggy@iggy.ninja
 
 ENV LANG='en_US.UTF-8' \
     LANGUAGE='en_US.UTF-8' \
@@ -13,7 +13,7 @@ RUN apk -U upgrade && \
         && \
     pip --no-cache-dir install --upgrade setuptools && \
     pip --no-cache-dir install --upgrade pyopenssl cheetah requirements && \
-    git clone --depth 1 https://github.com/SickRage/SickRage.git /sickrage && \
+    git clone --depth 1 https://github.com/pymedusa/Medusa.git /medusa && \
     apk del make gcc g++ python-dev && \
     rm -rf /tmp && \
     rm -rf /var/cache/apk/*
