@@ -33,7 +33,6 @@ RUN apk -U upgrade && \
         python3-dev \
         && \
     pip3 --no-cache-dir install setuptools && \
-    pip3 --no-cache-dir install requirements && \
     git clone --depth 1 https://github.com/pymedusa/Medusa.git /medusa && \
     apk del make gcc g++ python-dev && \
     rm -rf /tmp && \
