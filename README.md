@@ -1,6 +1,6 @@
-# docker sickrage
+# docker medusa
 
-This is a Dockerfile to set up "SickRage" - (https://sickrage.github.io/)
+This is a Dockerfile to set up "pyMedusa" - (https://pymedusa.com/)
 
 Build from docker file
 
