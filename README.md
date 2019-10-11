@@ -2,6 +2,9 @@
 
 This is a Dockerfile to set up "pyMedusa" - (https://pymedusa.com/)
 
+The build is done automatically by docker hub, but if you need to build it,
+follow the below instructions.
+
 Build from docker file
 
 ```
