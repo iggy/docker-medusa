@@ -22,7 +22,6 @@ RUN apk -U upgrade && \
         py3-feedparser \
         py3-dateutil \
         py3-future \
-        py3-configparser \
         py3-lockfile \
         py3-configobj \
         py3-six \
@@ -32,7 +31,7 @@ RUN apk -U upgrade && \
         py3-cheetah \
         python3-dev \
         && \
-    pip3 --no-cache-dir install setuptools && \
+    pip3 --no-cache-dir install setuptools configparser && \
     git clone --depth 1 https://github.com/pymedusa/Medusa.git /medusa && \
     apk del make gcc g++ python-dev && \
     rm -rf /tmp && \
