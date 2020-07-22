@@ -5,37 +5,11 @@ ENV LANG='en_US.UTF-8' \
     LANGUAGE='en_US.UTF-8' \
     TERM='xterm'
 
-RUN apk -U upgrade && \
-    apk -U add \
-        ca-certificates \
-        git \
-        tzdata \
-        py3-twitter \
-        py3-jwt \
-        py3-requests-oauthlib \
-        py3-jsonrpclib \
-        py3-chardet \
-        py3-mako \
-        py3-tornado \
-        py3-requests \
-        py3-markdown \
-        py3-feedparser \
-        py3-dateutil \
-        py3-future \
-        py3-lockfile \
-        py3-configobj \
-        py3-six \
-        py3-certifi \
-        py3-beautifulsoup4 \
-        py3-openssl \
-        py3-cheetah \
-        python3-dev \
-        && \
-    pip3 --no-cache-dir install setuptools configparser && \
-    git clone --depth 1 https://github.com/pymedusa/Medusa.git /medusa && \
-    apk del make gcc g++ python-dev && \
-    rm -rf /tmp && \
-    rm -rf /var/cache/apk/*
+RUN apk --no-cache add ca-certificates tzdata unrar mediainfo python3 && \
+    wget -q https://github.com/pymedusa/Medusa/archive/master.zip && \
+    unzip -q master.zip && \
+    mv Medusa-master /medusa && \
+    rm -rf master.zip /tmp/* /var/cache/apk/* /root/.cache /usr/lib/python3.8/__pycache__/*
 
 ADD ./start.sh /start.sh
 RUN chmod u+x  /start.sh
